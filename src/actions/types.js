@@ -1,0 +1,6 @@
+export const GET_BARANGS = 'GET_BARANGS'
+export const DELETE_BARANG = 'DELETE_BARANG'
+export const ADD_BARANG = 'ADD_BARANG'
+export const UPDATE_BARANG = 'UPDATE_BARANG'
+export const UPDATE_DETAIL = 'UPDATE_DETAIL'
+export const CALCULATE_TOTAL = 'CALCULATE_TOTAL'
