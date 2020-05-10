@@ -143,19 +143,19 @@ export class PreviewModal extends Component {
   </div>
   <div className="col detail">
       <div className="row">
-        <span className="col-8 text-right">Subtotal : </span>
-        <span className="col-4 text-right">{`Rp${subtotal}`}</span>
+        <span className="col-4 col-sm-8 text-right">Subtotal : </span>
+        <span className="col-8 col-sm-4 text-right">{`Rp${subtotal}`}</span>
         
       </div>
       <div className="row">
-        <span className="d-flex align-items-center justify-content-end col-8 text-right">Diskon : </span>
-        <span className="col-4 text-right">
+        <span className="d-flex align-items-center justify-content-end col-4 col-sm-8 text-right">Diskon : </span>
+        <span className="col-8 col-sm-4 text-right">
         {diskon || "-"}
         </span>
       </div>
       <div className="row">
-        <span className="col-sm-8 text-right">Total :</span>
-        <span className="col-sm-4 text-right">{`Rp${subtotal-diskon}`}</span>
+        <span className="col-4 col-sm-8 text-right">Total :</span>
+        <span className="col-8 col-sm-4 text-right">{`Rp${subtotal-diskon}`}</span>
       </div>
   </div>
 </div> 
