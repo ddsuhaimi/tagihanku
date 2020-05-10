@@ -16,7 +16,7 @@ background: linear-gradient(156deg, rgba(41,109,175,1) 27%, rgba(0,212,255,1) 10
   color: white;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 768px) {
   .modal-dialog {
     max-width: 100%;
   }
