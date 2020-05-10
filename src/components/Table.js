@@ -81,7 +81,7 @@ export class Table extends Component {
         </span>
       </div>
       <div className="row">
-        <span className="col-4 col-sm-88 text-right">Total :</span>
+        <span className="col-4 col-sm-8 text-right">Total :</span>
         <span className="col-8 col-sm-4 text-right">{`Rp${subtotal-diskon}`}</span>
       </div>
   </div>
