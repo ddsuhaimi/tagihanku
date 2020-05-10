@@ -77,9 +77,9 @@ export class Row extends Component {
       {/* kolom terakhir buat button delete */}
       <td className="border-0 col-1 d-flex align-items-center">
         <div className="align-middle">
-         <a onClick={this.handleDelete.bind(this, id)} className="text-white btn btn-sm btn-danger">
+         <button onClick={this.handleDelete.bind(this, id)} className="text-white btn btn-sm btn-danger">
           <i className="fas fa-trash"></i>
-          </a>
+          </button>
         </div>
       </td>
     </tr>

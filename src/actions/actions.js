@@ -1,4 +1,4 @@
-import { DELETE_BARANG, GET_BARANGS, ADD_BARANG, UPDATE_BARANG, UPDATE_DETAIL, CALCULATE_TOTAL } from "./types";
+import { DELETE_BARANG, GET_BARANGS, ADD_BARANG, UPDATE_BARANG, UPDATE_DETAIL, CALCULATE_TOTAL, TOGGLE_PREVIEW_MODAL } from "./types";
 
 export const getBarangs = () => {
   return {
@@ -32,5 +32,10 @@ export const updateDetail = (fields) => {
 export const calculateTotal = () => {
   return {
     type: CALCULATE_TOTAL
+  }
+}
+export const togglePreviewModal = () => {
+  return {
+    type: TOGGLE_PREVIEW_MODAL
   }
 }

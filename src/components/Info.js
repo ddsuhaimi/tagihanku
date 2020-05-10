@@ -18,7 +18,7 @@ export class Info extends Component {
       <div className="row">
         <div className="col-sm-5">
             <h4 className="supplier text-uppercase">
-              Penyedia
+              Dari
             </h4>
             <form className="form-horizontal">
           <div className="form-group row">
@@ -36,7 +36,7 @@ export class Info extends Component {
           </form>
         </div>
         <div className="col-sm-2">
-      {" "}
+       {" "}
         </div>
         <div className="col-sm-5">
         <h4 className="supplier text-uppercase">

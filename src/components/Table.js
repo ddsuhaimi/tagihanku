@@ -32,12 +32,12 @@ export class Table extends Component {
   }
 
   render() {
-    const { barangs, pembayaran, diskon, subtotal, total } = this.props
+    const { barangs, pembayaran, diskon, subtotal } = this.props
     
     return (
       <div className="row">
-        <div className="col-sm-12">
-        <table className="table" style={{width:'96%'}}>
+        <div className="col-sm-12 ">
+        <table className="table" style={{maxWidth:'96%'}}>
   <thead>
     <tr className="d-flex text-center">
       <th className="col-5" scope="col">Nama barang/jasa</th>
@@ -52,28 +52,28 @@ export class Table extends Component {
       <Row barang={barang} key={barang.id} />
     ))}
   </tbody>
-    <span>
+    
 
-    <a onClick={this.handleAdd} className="text-white btn btn-primary btn-sm">
+    
+    <button onClick={this.handleAdd} className="text-white btn btn-primary btn-sm">
     <i className="fas fa-plus"> </i> Tambah barang
-  </a>
-    </span>
+  </button>
 </table>
 <div className="row">
-  <div className="col">
+  <div className="col-sm-6 col-12">
     <div className="container py-2 bg-light">
       <h5 className="text-uppercase">Pembayaran</h5>
       <textarea value={pembayaran} onChange={this.handleChangeDetail} name="pembayaran" className="bg-light form-control" placeholder="Tuliskan metode pembayaran"/>
     </div>
   </div>
-  <div className="col detail">
+  <div className="col-sm-6 col-12 detail">
       <div className="row">
-        <span className="col-8 text-right">Subtotal : </span>
-        <span className="col-4 text-right">{!Number.isNaN(subtotal) ? `Rp${subtotal}` : ""}</span>
+        <span className="col-4 col-sm-8 text-right">Subtotal : </span>
+        <span className="col-8 col-sm-4 text-right">{!Number.isNaN(subtotal) ? `Rp${subtotal}` : ""}</span>
       </div>
       <div className="row">
-        <span className="d-flex align-items-center justify-content-end col-8 text-right">Diskon : </span>
-        <span className="col-4 text-right">
+        <span className="d-flex align-items-center justify-content-end col-4 col-sm-8 text-right">Diskon : </span>
+        <span className="col-8 col-sm-4 text-right">
           <div className="input-group input-group-sm">
             <div className="input-group-prepend"><span className="input-group-text">Rp</span></div>
           <input value={diskon || ""} name="diskon" onChange={this.handleChangeDetail} type="number" className="form-control input-sm"/>
@@ -81,8 +81,8 @@ export class Table extends Component {
         </span>
       </div>
       <div className="row">
-        <span className="col-8 text-right">Total :</span>
-        <span className="col-4 text-right">{`Rp${subtotal-diskon}`}</span>
+        <span className="col-4 col-sm-88 text-right">Total :</span>
+        <span className="col-8 col-sm-4 text-right">{`Rp${subtotal-diskon}`}</span>
       </div>
   </div>
 </div>

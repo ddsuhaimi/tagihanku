@@ -1,3 +1,17 @@
-.App .container {
+.App .container-tagihanku {
   background: white;
+}
+
+.jumbotron {
+  background: rgb(41,109,175);
+background: linear-gradient(156deg, rgba(41,109,175,1) 27%, rgba(0,212,255,1) 100%);
+}
+
+.footer {
+  /* position: fixed; */
+  margin-top: 5em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
 }

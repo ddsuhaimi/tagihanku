@@ -1,9 +1,8 @@
-import { GET_BARANGS, DELETE_BARANG, ADD_BARANG, UPDATE_BARANG, UPDATE_DETAIL, CALCULATE_TOTAL } from '../actions/types'
+import { GET_BARANGS, DELETE_BARANG, ADD_BARANG, UPDATE_BARANG, UPDATE_DETAIL, CALCULATE_TOTAL, TOGGLE_PREVIEW_MODAL } from '../actions/types'
 
 const initialState = {
   barangs: [
-    {id:1, nama:'Hosting', jumlah:12, satuan:'Bulan', hargaSatuan:12000},
-    {id:2, nama:'Domain', jumlah:24, satuan:'Bulan', hargaSatuan:5000},
+    {id:1, nama:'', jumlah:'', satuan:'', hargaSatuan:''},
   ],
   nomor: "",
   tanggal: "",
@@ -15,6 +14,10 @@ const initialState = {
   namaKlien: "",
   alamatKlien: "",
   subtotal: "",
+  isOnPreview: false,
+  logo: "",
+  logoWidth: 128,
+  logoHeight: 128,
 }
 
 export default function( state = initialState, action ) {
@@ -49,6 +52,11 @@ export default function( state = initialState, action ) {
         subtotal: state.barangs.reduce(((a,x) => a+=x.jumlah*x.hargaSatuan),0),
         diskon: parseInt(state.diskon) || 0,
         total: state.subtotal - state.diskon
+      }
+    case TOGGLE_PREVIEW_MODAL:
+      return {
+        ...state,
+        isOnPreview: !state.isOnPreview
       }
     default:
       return state
