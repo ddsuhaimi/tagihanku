@@ -37,14 +37,14 @@ export class PreviewModal extends Component {
           {tanggal && <div className="form-group row">
             <label htmlFor="tanggal" className="col-sm-8 col-form-label text-right">Tanggal :</label>
             <div className="col-sm-4 d-flex align-items-center">
-              {tanggal}
+              {tanggal.getFullYear() + "/" + (tanggal.getMonth() + 1) + "/" + tanggal.getDate()}
             </div>
           </div>}
 
           {jatuhTempo && <div className="form-group row">
             <label htmlFor="jatuhTempo" className="col-sm-8 col-form-label text-right">Jatuh tempo :</label>
             <div className="col-sm-4 d-flex align-items-center">
-              {jatuhTempo}
+            {jatuhTempo.getFullYear() + "/" + (jatuhTempo.getMonth() + 1) + "/" + jatuhTempo.getDate()}
             </div>
           </div>}
         </form>
