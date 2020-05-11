@@ -14,6 +14,11 @@ export class PreviewModal extends Component {
   }
 
 
+
+
+  parsingTanggal = tanggal => {
+    return `${tanggal.getDate()}/${tanggal.getMonth() + 1}/${tanggal.getFullYear()}`
+  }
   render() {
     const { logo, logoWidth, logoHeight, nomor, tanggal, jatuhTempo, namaUser, namaKlien, alamatUser, alamatKlien, barangs, pembayaran, diskon, subtotal } = this.props
     return (
@@ -37,14 +42,14 @@ export class PreviewModal extends Component {
           {tanggal && <div className="form-group row">
             <label htmlFor="tanggal" className="col-sm-8 col-form-label text-right">Tanggal :</label>
             <div className="col-sm-4 d-flex align-items-center">
-              {tanggal.getFullYear() + "/" + (tanggal.getMonth() + 1) + "/" + tanggal.getDate()}
+              {this.parsingTanggal(tanggal)}
             </div>
           </div>}
 
           {jatuhTempo && <div className="form-group row">
             <label htmlFor="jatuhTempo" className="col-sm-8 col-form-label text-right">Jatuh tempo :</label>
             <div className="col-sm-4 d-flex align-items-center">
-            {jatuhTempo.getFullYear() + "/" + (jatuhTempo.getMonth() + 1) + "/" + jatuhTempo.getDate()}
+            {this.parsingTanggal(jatuhTempo)}
             </div>
           </div>}
         </form>

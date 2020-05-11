@@ -17,9 +17,13 @@ export class Header extends Component {
   }
 
   handleChangeTanggal = tanggal => {
-    console.log(tanggal)
     this.props.updateDetail({
-      tanggal: tanggal
+      tanggal
+    })
+  }
+  handleChangeJatuhTempo = jatuhTempo => {
+    this.props.updateDetail({
+      jatuhTempo
     })
   }
 
@@ -45,7 +49,7 @@ export class Header extends Component {
             <label htmlFor="tanggal" className="col-sm-8 col-form-label text-right">Tanggal :</label>
             <div className="col-sm-4 d-flex align-items-center">
               {/* <input name="tanggal" onChange={this.handleChangeDetail} value={tanggal} type="date" className="form-control" placeholder="cth: 04/02/2020"/> */}
-              <DatePicker className="form-control" selected={tanggal} onChange={this.handleChangeTanggal} />
+              <DatePicker name="tanggal" className="form-control" selected={tanggal} onChange={this.handleChangeTanggal} />
             </div>
           </div>
 
@@ -53,7 +57,7 @@ export class Header extends Component {
             <label htmlFor="jatuhTempo" className="col-sm-8 col-form-label text-right">Jatuh tempo :</label>
             <div className="col-sm-4 d-flex align-items-center">
               {/* <input name="jatuhTempo" onChange={this.handleChangeDetail} value={jatuhTempo} type="text" className="form-control" placeholder="cth: 04/02/2020"/> */}
-              <DatePicker className="form-control" selected={jatuhTempo} onChange={this.handleChangeTanggal} />
+              <DatePicker name="jatuhTempo" className="form-control" selected={jatuhTempo} onChange={this.handleChangeJatuhTempo} />
 
             </div>
           </div>
