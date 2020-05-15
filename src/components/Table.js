@@ -28,11 +28,12 @@ export class Table extends Component {
   }
 
   componentDidMount() {
+
     this.props.calculateTotal()
   }
 
   render() {
-    const { barangs, pembayaran, diskon, subtotal } = this.props
+    const { barangs, pembayaran, diskon, subtotal, mataUang } = this.props
     
     return (
       <div className="row">
@@ -69,20 +70,20 @@ export class Table extends Component {
   <div className="col-sm-6 col-12 detail">
       <div className="row">
         <span className="col-4 col-sm-8 text-right">Subtotal : </span>
-        <span className="col-8 col-sm-4 text-right">{!Number.isNaN(subtotal) ? `Rp${subtotal}` : ""}</span>
+        <span className="col-8 col-sm-4 text-right">{!Number.isNaN(subtotal) ? `${mataUang}${subtotal}` : ""}</span>
       </div>
       <div className="row">
         <span className="d-flex align-items-center justify-content-end col-4 col-sm-8 text-right">Diskon : </span>
         <span className="col-8 col-sm-4 text-right">
           <div className="input-group input-group-sm">
-            <div className="input-group-prepend"><span className="input-group-text">Rp</span></div>
+            <div className="input-group-prepend"><span className="input-group-text">{mataUang}</span></div>
           <input value={diskon || ""} name="diskon" onChange={this.handleChangeDetail} type="number" className="form-control input-sm"/>
           </div>
         </span>
       </div>
       <div className="row">
         <span className="col-4 col-sm-8 text-right">Total :</span>
-        <span className="col-8 col-sm-4 text-right">{`Rp${subtotal-diskon}`}</span>
+        <span className="col-8 col-sm-4 text-right">{`${mataUang}${subtotal-diskon}`}</span>
       </div>
   </div>
 </div>
@@ -98,7 +99,8 @@ const mapStateToProps = (state) => ({
   pembayaran: state.invoice.pembayaran,
   diskon: state.invoice.diskon,
   subtotal: state.invoice.subtotal,
-  total: state.invoice.total
+  total: state.invoice.total,
+  mataUang: state.invoice.mataUang
 })
 
 

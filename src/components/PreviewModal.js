@@ -20,7 +20,7 @@ export class PreviewModal extends Component {
     return `${tanggal.getDate()}/${tanggal.getMonth() + 1}/${tanggal.getFullYear()}`
   }
   render() {
-    const { logo, logoWidth, logoHeight, nomor, tanggal, jatuhTempo, namaUser, namaKlien, alamatUser, alamatKlien, barangs, pembayaran, diskon, subtotal } = this.props
+    const { logo, logoWidth, logoHeight, nomor, tanggal, jatuhTempo, namaUser, namaKlien, alamatUser, alamatKlien, barangs, pembayaran, diskon, subtotal, mataUang } = this.props
     return (
       <div id="modal-preview" className="mb-4 bg-white container mt-4">
         {/* header */}
@@ -124,10 +124,10 @@ export class PreviewModal extends Component {
             <td className="col-1">{barang.jumlah}</td>
             <td className="col-2">{barang.satuan}</td>
             <td className="col-2">
-              {`Rp${barang.hargaSatuan}`}
+              {`${mataUang}${barang.hargaSatuan}`}
              </td>
             <td className="col-2">
-              {`Rp${barang.jumlah*barang.hargaSatuan}`}
+              {`${mataUang}${barang.jumlah*barang.hargaSatuan}`}
             </td>
             </tr>
           ))}
@@ -149,7 +149,7 @@ export class PreviewModal extends Component {
   <div className="col detail">
       <div className="row">
         <span className="col-4 col-sm-8 text-right">Subtotal : </span>
-        <span className="col-8 col-sm-4 text-right">{`Rp${subtotal}`}</span>
+        <span className="col-8 col-sm-4 text-right">{`${mataUang}${subtotal}`}</span>
         
       </div>
       <div className="row">
@@ -160,7 +160,7 @@ export class PreviewModal extends Component {
       </div>
       <div className="row">
         <span className="col-4 col-sm-8 text-right">Total :</span>
-        <span className="col-8 col-sm-4 text-right">{`Rp${subtotal-diskon}`}</span>
+        <span className="col-8 col-sm-4 text-right">{`${mataUang}${subtotal-diskon}`}</span>
       </div>
   </div>
 </div> 
@@ -187,6 +187,7 @@ const mapStateToProps = state => ({
   diskon: state.invoice.diskon,
   subtotal: state.invoice.subtotal,
   total: state.invoice.total,
+  mataUang: state.invoice.mataUang
 })
 
 export default connect(mapStateToProps, { togglePreviewModal })(PreviewModal)

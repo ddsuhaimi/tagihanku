@@ -1,4 +1,5 @@
 import { GET_BARANGS, DELETE_BARANG, ADD_BARANG, UPDATE_BARANG, UPDATE_DETAIL, CALCULATE_TOTAL, TOGGLE_PREVIEW_MODAL } from '../actions/types'
+import mataUangs from '../assets/data/mataUangs.json'
 
 const initialState = {
   barangs: [
@@ -18,6 +19,8 @@ const initialState = {
   logo: "",
   logoWidth: 128,
   logoHeight: 128,
+  mataUangs: mataUangs,
+  mataUang: 'Rp'
 }
 
 export default function( state = initialState, action ) {

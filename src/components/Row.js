@@ -48,7 +48,7 @@ export class Row extends Component {
   render() {
     // Tarik variabel dari state
     const { nama, jumlah, satuan, hargaSatuan } = this.state
-
+    const { mataUang } = this.props
     // Tarik id dari props barang ( karena id tidak berubah, jadi tidak perlu letakkan di state)
     const { id } = this.props.barang
     return (
@@ -60,7 +60,7 @@ export class Row extends Component {
       <td className="col-2">
         <div className="input-group">
           <div className="input-group-prepend">
-            <span className="input-group-text">Rp</span>
+            <span className="input-group-text">{mataUang}</span>
           </div>
           <input onChange={this.handleChange} type="number" className="form-control" name="hargaSatuan" value={hargaSatuan} />
         </div>
@@ -68,7 +68,7 @@ export class Row extends Component {
       <td className="col-2">
         <div className="input-group">
           <div className="input-group-prepend">
-            <span className="input-group-text">Rp</span>
+            <span className="input-group-text">{mataUang}</span>
           </div>
         <input type="number" className="form-control"  value={Number.isNaN(jumlah*hargaSatuan) ? "" : jumlah*hargaSatuan} readOnly/>
         </div>
@@ -88,4 +88,8 @@ export class Row extends Component {
   }
 }
 
-export default connect(null, { deleteBarang, updateBarang, calculateTotal })(Row)
+const mapStateToProps = state => ({
+  mataUang: state.invoice.mataUang
+})
+
+export default connect(mapStateToProps, { deleteBarang, updateBarang, calculateTotal })(Row)
